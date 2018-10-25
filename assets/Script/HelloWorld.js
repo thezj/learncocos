@@ -27,7 +27,12 @@ cc.Class({
 
         }, 300)
     },
-
+    callback: function (event, customEventData) {
+        //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
+        window.buttonevent = event
+        console.log(event)
+        //这里的 customEventData 参数就等于你之前设置的 "foobar"
+    },
     // called every frame
     update: function (dt) {
 
