@@ -7,11 +7,14 @@ cc.Class({
         text: 'Hello, World!',
         armerright: {
             type: cc.SpriteFrame,
-            default: null
+            default: null,
+            tooltip:'向右的精灵图片'
         },
         armerorigin: {
             type: cc.SpriteFrame,
-            default: null
+            default: null,
+            tooltip:'向左的精灵图片'
+
         },
         stageback: {
             type: cc.Node,
