@@ -1,3 +1,5 @@
+let player = require('player')
+console.log(player)
 cc.Class({
     extends: cc.Component,
 
@@ -57,8 +59,25 @@ cc.Class({
             }
 
         }, 300)
+
+
+        //获得节点node
+        let node  = this.node
+        console.log(node)
+
+        //获得其他组件
+        console.log(this.getComponent(cc.Button).zoomScale = 1.5)
+        //节点对象上也有个getcomponent方法和这个方法是一样的
+        console.log(node.getComponent(cc.Button) === this.getComponent(cc.Button))
+
+        //查找子节点
+        console.log(this.node.children)
+        //通过名称获取子节点
+        console.log(this.node.getChildByName('testbutton'))
+        //跨越多个层级使用路径查找子节点
+        console.log(cc.find("testbutton/testlable", this.node));
     },
-    callback: function (event, customEventData) {
+    btncallback: function (event, customEventData) {
         //这里 event 是一个 Touch Event 对象，你可以通过 event.target 取到事件的发送节点
         window.buttonevent = event
         console.log(event)
