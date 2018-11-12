@@ -10,22 +10,32 @@ cc.Class({
         armerright: {
             type: cc.SpriteFrame,
             default: null,
-            tooltip:'向右的精灵图片'
+            tooltip: '向右的精灵图片'
         },
         armerorigin: {
             type: cc.SpriteFrame,
             default: null,
-            tooltip:'向左的精灵图片'
+            tooltip: '向左的精灵图片'
 
         },
         stageback: {
             type: cc.Node,
             default: null
-        }
+        },
+        _time: 0.0
+    },
+
+    onStart() {
+        //onstart回调
+        console.log('onstart回调')
+        this._time = 0.0
     },
 
     // use this for initialization
     onLoad: function () {
+
+        //onload回调
+        console.log('onload回调')
 
 
         this.armerorigin = this.node.getComponents(cc.Sprite)[0].spriteFrame
@@ -62,7 +72,7 @@ cc.Class({
 
 
         //获得节点node
-        let node  = this.node
+        let node = this.node
         console.log(node)
 
         //获得其他组件
@@ -86,5 +96,10 @@ cc.Class({
     // called every frame
     update: function (dt) {
 
+        this._time += dt
+        if (this._time >= 3.0) {
+            console.log('i am done')
+            this.enabled = false
+        }
     },
 });
