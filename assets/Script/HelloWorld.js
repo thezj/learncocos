@@ -34,6 +34,21 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+        //创建节点，传入到场景中
+        let soldier = new cc.Node('Sprite')
+        let soldiersp = soldier.addComponent(cc.Sprite)
+        soldiersp.spriteFrame = this.armerright
+        soldier.height = 100
+        soldier.width = 100
+        soldier.x = -100
+        soldier.y = 200
+        soldier.parent = this.node.parent
+
+        setTimeout(i=>{
+            soldier.destroy()
+        },2000)
+
+
         //onload回调
         console.log('onload回调')
 
