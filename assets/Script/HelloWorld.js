@@ -1,5 +1,10 @@
 let player = require('player')
 console.log(player)
+if (!window.global) {
+    window.global = {
+        x: 1
+    }
+}
 cc.Class({
     extends: cc.Component,
 
@@ -43,10 +48,12 @@ cc.Class({
         soldier.x = -100
         soldier.y = 200
         soldier.parent = this.node.parent
-
-        setTimeout(i=>{
+        console.log('全局对象', global)
+        global.x = 3
+        setTimeout(i => {
             soldier.destroy()
-        },2000)
+            cc.director.loadScene('helloworld')
+        }, 2000)
 
 
         //onload回调
