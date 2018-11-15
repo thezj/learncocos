@@ -53,7 +53,7 @@ cc.Class({
         setTimeout(i => {
             soldier.destroy()
             cc.director.loadScene('helloworld')
-        }, 2000)
+        }, 20000)
 
 
         //onload回调
@@ -67,11 +67,33 @@ cc.Class({
         this.node.zIndex = 1
         let oddnumber = 0
 
+        let armerright
+        //通过代码动态加载资源
+        cc.loader.loadRes("armerright1", cc.SpriteFrame, (err, spriteFrame) => {
+            console.log('动态加载spriteframe', spriteFrame)
+            var remoteUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542284937704&di=bfaddfde4bb68c20893ec105b91c7f25&imgtype=0&src=http%3A%2F%2Fhellorfimg.zcool.cn%2Fpreview%2F154672166.jpg";
+            cc.loader.load(remoteUrl, function (err, texture) {
+                // Use texture to create sprite frame
+                console.log('远程图片', texture)
+                spriteFrame.setTexture(texture)
+                armerright = spriteFrame;
+
+            });
+
+        });
+
+
+
+
+
         setInterval(i => {
 
             //切换sprite的贴图
             if (this.node.getComponents(cc.Sprite)[0].spriteFrame == this.armerorigin) {
-                this.node.getComponents(cc.Sprite)[0].spriteFrame = this.armerright
+                //编辑器中引用
+                // this.node.getComponents(cc.Sprite)[0].spriteFrame = this.armerright
+                this.node.getComponents(cc.Sprite)[0].spriteFrame = armerright
+
             } else {
                 this.node.getComponents(cc.Sprite)[0].spriteFrame = this.armerorigin
             }
