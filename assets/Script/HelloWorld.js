@@ -36,8 +36,19 @@ cc.Class({
         this._time = 0.0
     },
 
+    sayhello(){
+        console.log('Hello! mousedown');
+    },
+
     // use this for initialization
     onLoad: function () {
+
+        //在node上监听事件
+        this.node.on('mousedown', this.sayhello, this)
+
+        this.node.once('mousedown', function (event) {
+            console.log('Hello! mousedown im show once');
+        });
 
         //创建节点，传入到场景中
         let soldier = new cc.Node('Sprite')
@@ -52,8 +63,10 @@ cc.Class({
         global.x = 3
         setTimeout(i => {
             soldier.destroy()
-            cc.director.loadScene('helloworld')
-        }, 20000)
+            // cc.director.loadScene('helloworld')
+            //关闭监听
+            this.node.off('mousedown', this.sayhello, this);
+        }, 2000)
 
 
         //onload回调
