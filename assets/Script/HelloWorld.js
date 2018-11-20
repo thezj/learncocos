@@ -36,13 +36,30 @@ cc.Class({
         this._time = 0.0
     },
 
-    sayhello(){
+    sayhello() {
         console.log('Hello! mousedown');
     },
 
     // use this for initialization
     onLoad: function () {
 
+
+        //创建一个动作
+        //动作的回调
+        let timetemp1 = 1
+        var finished = cc.callFunc(function (target, param) {
+            console.log('动作结束', param,timetemp1++)
+        }, this, 100); //动作完成后会给玩家加100分
+
+        let firstaction = cc.moveTo(.5, -50, 50)
+        let firstsequence = cc.sequence(firstaction, cc.moveTo(.5, 0, 0))
+        let firstspawn = cc.spawn(firstaction, cc.scaleTo(.5, 0.5, 0.5), cc.rotateBy(.5, 360), finished)
+        let firstrepeat = cc.repeat(firstspawn, 5).easing(cc.easeIn(3.0))
+        this.node.runAction(firstrepeat)
+        // setTimeout(i => {
+        // 停止动作
+        //     this.node.stopAction(firstsequence)
+        // }, 2000)
         //在node上监听事件
         this.node.on('mousedown', this.sayhello, this)
 
