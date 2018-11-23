@@ -43,12 +43,17 @@ cc.Class({
     // use this for initialization
     onLoad: function () {
 
+        //计划定时器schedule(回调函数，repeat，delay)unschedule‘解除命名’回调函数的定时器
+        this.schedule(i => {
+            console.log('组件定时300ms')
+        }, 0.3, 5, 2)
+
 
         //创建一个动作
         //动作的回调
         let timetemp1 = 1
         var finished = cc.callFunc(function (target, param) {
-            console.log('动作结束', param,timetemp1++)
+            console.log('动作结束', param, timetemp1++)
         }, this, 100); //动作完成后会给玩家加100分
 
         let firstaction = cc.moveTo(.5, -50, 50)
