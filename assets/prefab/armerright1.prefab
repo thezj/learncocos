@@ -12,7 +12,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite",
+    "_name": "armerright1",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -39,18 +39,18 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 105,
-      "height": 181
+      "width": 138,
+      "height": 210
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
-      "x": 0.5,
-      "y": 0.5
+      "x": -2.2086326274051378,
+      "y": 0.539849819038583
     },
     "_position": {
       "__type__": "cc.Vec3",
-      "x": -15,
-      "y": -5,
+      "x": -212,
+      "y": 380,
       "z": 0
     },
     "_scale": {
@@ -85,7 +85,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "ad8015d9-6bbe-4131-87b6-96545a531d77"
+      "__uuid__": "1e67f7f3-6711-4f81-a66b-76e3cbd4fafb"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -103,20 +103,13 @@
     "_id": ""
   },
   {
-    "__type__": "280c3rsZJJKnZ9RqbALVwtK",
+    "__type__": "01019q0JWJM/ZWBFvhNK/0H",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "text": "Hello, World!",
-    "armerright": {
-      "__uuid__": "1e67f7f3-6711-4f81-a66b-76e3cbd4fafb"
-    },
-    "armerorigin": null,
-    "stageback": null,
-    "_time": 0,
     "_id": ""
   },
   {
@@ -125,9 +118,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "163a78a9-2f39-4b31-afe1-9c4b381346d4"
+      "__uuid__": "d051cbf3-c73a-42a5-abdb-12488c58354d"
     },
-    "fileId": "a0PkL4vDtMfInFKcLNWyai",
+    "fileId": "7eC6tW2mJOiqlnerMWtc3u",
     "sync": false
   }
 ]
