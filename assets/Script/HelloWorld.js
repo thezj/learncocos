@@ -134,6 +134,7 @@ cc.Class({
             }
 
             //切换节点的层级
+            return
             if (oddnumber == 0) {
                 oddnumber = 1
                 if (this.node.zIndex == 1) {
